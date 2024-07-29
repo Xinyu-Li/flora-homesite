@@ -19,7 +19,7 @@ const { Header, Content, Footer } = Layout;
 const items: MenuProps['items'] = [
   {
     label: (
-      <Link href="/" style={{ color: 'white' }}>
+      <Link href="/home" style={{ color: 'white' }}>
         Home
       </Link>
     ),
