@@ -3,7 +3,7 @@
 import React from 'react';
 import { Row, Col, Card, Typography, Button, Space } from 'antd';
 import { Divider } from 'antd';
-import MainLayout from './layouts/MainLayout';
+import MainLayout from '../layouts/MainLayout';
 
 const { Title, Text, Paragraph, Link } = Typography;
 
