@@ -265,11 +265,14 @@ const Home = () => {
                 <br></br>
               </Paragraph>
               <Paragraph style={{ fontSize: '16px', lineHeight: '1.6', marginBottom: '16px' }}>
-                Click here{' '}
-                <a href="/publications" target="_blank" rel="noopener noreferrer">
-                  here{' '}
-                </a>
-                to review the full publication list.
+                Click{' '}
+                {/*<a href="/publications" target="_blank" rel="noopener noreferrer">*/}
+                {/*  here{' '}*/}
+                {/*</a>*/}
+                <Link href="/home/publications" style={{ fontSize: '16px', color: 'blue' }}>
+                  here
+                </Link>
+                {' '}to review the full publication list.
               </Paragraph>
             </Card>
             <br />
