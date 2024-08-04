@@ -115,7 +115,7 @@ const Home = () => {
                           style={{ width: 'auto', height: '150px', margin: '0 auto' }}
                       />
                       <Button type="primary" style={{ marginTop: '8px' }} onClick={() => window.open('https://cella-lala.floraengine.org/moodle/', '_blank')}>
-                        Visit North American site
+                        Visit Latin American site
                       </Button>
                     </div>
                   </Card>
@@ -266,7 +266,7 @@ const Home = () => {
               </Paragraph>
               <Paragraph style={{ fontSize: '16px', lineHeight: '1.6', marginBottom: '16px' }}>
                 Click here{' '}
-                <a href="http://localhost:3000/backend/publications" target="_blank" rel="noopener noreferrer">
+                <a href="/publications" target="_blank" rel="noopener noreferrer">
                   here{' '}
                 </a>
                 to review the full publication list.
