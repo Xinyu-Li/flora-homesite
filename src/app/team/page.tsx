@@ -137,7 +137,9 @@ const Team = () => {
                     <Row gutter={16} style={{ display: 'flex', alignItems: 'stretch' }}>
                         {teamMembers.map((member, index) => (
                             <Col span={12} style={{ display: 'flex' }} key={index}>
-                                <Card hoverable style={cardStyle} bodyStyle={{ padding: '16px', overflow: 'hidden', flex: 1 }}>
+                                <Card hoverable style={cardStyle}
+                                      styles={{body: {padding: '16px', overflow: 'hidden', flex: 1}}}
+                                     >
                                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                         <img alt={member.name} src={member.photo} style={imgStyle} />
                                         <Text style={textStyle}>{member.name}</Text> {/* 在图片下方添加名字，并设置样式 */}

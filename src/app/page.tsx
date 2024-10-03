@@ -70,7 +70,7 @@ const Home = () => {
                   <Card
                       hoverable
                       style={{ ...cardStyle, height: '260px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
-                      bodyStyle={{ padding: 0, overflow: 'hidden', flex: 1 }}
+                      styles={{body: {padding: 0, overflow: 'hidden', flex: 1}}}
                   >
                     <div style={{ textAlign: 'center', padding: '16px' }}>
                       <img
@@ -88,7 +88,7 @@ const Home = () => {
                   <Card
                       hoverable
                       style={{ ...cardStyle, height: '260px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
-                      bodyStyle={{ padding: 0, overflow: 'hidden', flex: 1 }}
+                      styles={{body: {padding: 0, overflow: 'hidden', flex: 1}}}
                   >
                     <div style={{ textAlign: 'center', padding: '16px' }}>
                       <img
@@ -106,7 +106,7 @@ const Home = () => {
                   <Card
                       hoverable
                       style={{ ...cardStyle, height: '260px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
-                      bodyStyle={{ padding: 0, overflow: 'hidden', flex: 1 }}
+                      styles={{body: {padding: 0, overflow: 'hidden', flex: 1}}}
                   >
                     <div style={{ textAlign: 'center', padding: '16px' }}>
                       <img
@@ -124,7 +124,7 @@ const Home = () => {
                   <Card
                       hoverable
                       style={{ ...cardStyle, height: '260px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
-                      bodyStyle={{ padding: 0, overflow: 'hidden', flex: 1 }}
+                      styles={{body: {padding: 0, overflow: 'hidden', flex: 1}}}
                   >
                     <div style={{ textAlign: 'center', padding: '16px' }}>
                       <img
@@ -280,7 +280,8 @@ const Home = () => {
             <Card title={<div style={{ background: 'linear-gradient(to right, #87CEFA, #B0E0E6)', color: 'black', padding: '8px 16px' }}>Recent Keynotes</div>} size="default">
               <Row gutter={16} style={{ display: 'flex', alignItems: 'stretch' }}>
                 <Col span={12} style={{ display: 'flex' }}>
-                  <Card hoverable style={cardStyle} bodyStyle={{ padding: 0, overflow: 'hidden', flex: 1 }}>
+                  <Card hoverable style={cardStyle}
+                        styles={{body: {padding: 0, overflow: 'hidden', flex: 1}}}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flex: 1 }}>
                       <div style={{ textAlign: 'center' }}>
                         <img alt="avatar" src="https://citers2024.cite.hku.hk/wp-content/uploads/dragan_gasevic.webp" style={imgStyle} />
@@ -300,7 +301,8 @@ const Home = () => {
                   </Card>
                 </Col>
                 <Col span={12} style={{ display: 'flex' }}>
-                  <Card hoverable style={cardStyle} bodyStyle={{ padding: 0, overflow: 'hidden', flex: 1 }}>
+                  <Card hoverable style={cardStyle}
+                        styles={{body: {padding: 0, overflow: 'hidden', flex: 1}}}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flex: 1 }}>
                       <div style={{ textAlign: 'center' }}>
                         <img alt="avatar" src="https://citers2024.cite.hku.hk/wp-content/uploads/Prof_Sanna_Jarvela_300.jpg" style={imgStyle} />
