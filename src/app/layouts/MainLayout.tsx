@@ -9,6 +9,7 @@ import { useRouter } from 'next/router';
 
 import Logo from '../components/Logo';
 import Link from 'next/link';
+import Image from "next/image";
 
 type PropsType = {
   children: React.ReactNode | React.ReactNode[];
@@ -74,7 +75,7 @@ const MainLayout: FC<PropsType> = (props: PropsType) => {
     <Layout>
       <Header className={styles.header}>
         <div className={styles.left}>
-          <Logo />
+          <Image src={'/logo1.png'} alt="FLoRA Logo" width={100} height={70} />
         </div>
         <div className={styles.right}>
           <Menu theme="dark"  mode="horizontal" items={items} />
