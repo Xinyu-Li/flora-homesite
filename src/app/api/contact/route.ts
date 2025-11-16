@@ -1,58 +1,75 @@
-// src/app/api/contact/route.ts
+import { NextRequest, NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
-import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+type ContactPayload = {
+  name?: string;
+  email?: string;
+  message?: string;
+};
+
+const REQUIRED_ENV = ["EMAIL_HOST", "EMAIL_PORT", "EMAIL_SECURE", "EMAIL_USER", "EMAIL_PASS"] as const;
+
+const buildTransporter = () => {
+  const missing = REQUIRED_ENV.filter((key) => !process.env[key]);
+  if (missing.length > 0) {
+    throw new Error(`Missing email environment variables: ${missing.join(", ")}`);
+  }
+
+  return nodemailer.createTransport({
+    host: process.env.EMAIL_HOST,
+    port: Number(process.env.EMAIL_PORT),
+    secure: process.env.EMAIL_SECURE === "true",
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
+};
 
 export async function POST(req: NextRequest) {
-    console.log('POST /home/api/contact 被调用'); // 调试日志
-    try {
-        const { name, email, message } = await req.json();
-        console.log('收到的表单数据:', { name, email, message }); // 调试日志
+  try {
+    const body: ContactPayload = await req.json();
+    const trimmed = {
+      name: body.name?.trim(),
+      email: body.email?.trim(),
+      message: body.message?.trim(),
+    };
 
-        // 简单的输入验证
-        if (!name || !email || !message) {
-            console.log('表单验证失败: 所有字段都是必填的。');
-            return NextResponse.json({ message: '所有字段都是必填的。' }, { status: 400 });
-        }
-
-        // 创建 Nodemailer 传输器
-        const transporter = nodemailer.createTransport({
-            host: process.env.EMAIL_HOST,
-            port: Number(process.env.EMAIL_PORT),
-            secure: process.env.EMAIL_SECURE === 'true',
-            auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS,
-            },
-        });
-
-        // 邮件选项
-        const mailOptions = {
-            from: `"${name}" <${email}>`, // 发件人地址（用户填写的邮箱）
-            to: 'tony.li@monash.edu', // 收件人地址（您的邮箱）
-            subject: '新联系表单提交',
-            text: `
-                你有一个新的联系表单提交：
-
-                名字: ${name}
-                邮箱: ${email}
-                信息: ${message}
-            `,
-            html: `
-                <p>你有一个新的联系表单提交：</p>
-                <p><strong>名字:</strong> ${name}</p>
-                <p><strong>邮箱:</strong> ${email}</p>
-                <p><strong>信息:</strong></p>
-                <p>${message}</p>
-            `,
-        };
-
-        await transporter.sendMail(mailOptions);
-        console.log('邮件发送成功');
-
-        return NextResponse.json({ message: '消息发送成功。' }, { status: 200 });
-    } catch (error) {
-        console.error('发送邮件时出错:', error);
-        return NextResponse.json({ message: '发送邮件时出错。' }, { status: 500 });
+    if (!trimmed.name || !trimmed.email || !trimmed.message) {
+      return NextResponse.json({ message: "Name, email, and message are required." }, { status: 400 });
     }
+
+    const transporter = buildTransporter();
+    const fromAddress = process.env.EMAIL_FROM || process.env.EMAIL_USER;
+    if (!fromAddress) {
+      throw new Error("Missing EMAIL_FROM or EMAIL_USER value.");
+    }
+
+    await transporter.sendMail({
+      from: fromAddress,
+      replyTo: `"${trimmed.name}" <${trimmed.email}>`,
+      to: "xinyu.li1@monash.edu",
+      cc: "tony.li@monash.edu",
+      subject: "FLoRA Contact",
+      text: `From: ${trimmed.name} (${trimmed.email})\n\n${trimmed.message}`,
+      html: `
+        <p>You have a new message from floraengine.org</p>
+        <p><strong>Name:</strong> ${trimmed.name}</p>
+        <p><strong>Email:</strong> ${trimmed.email}</p>
+        <p><strong>Message:</strong></p>
+        <p>${trimmed.message.replace(/\n/g, "<br />")}</p>
+      `,
+    });
+
+    return NextResponse.json({ message: "Message sent successfully." });
+  } catch (error) {
+    console.error("Failed to send contact message", error);
+    const status =
+      error instanceof Error && error.message.includes("Missing email") ? 500 : 502;
+    const message =
+      error instanceof Error && status === 500
+        ? error.message
+        : "Unable to send message right now. Please try again later.";
+    return NextResponse.json({ message }, { status });
+  }
 }

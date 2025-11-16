@@ -1,0 +1,13 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.item {
+  padding: 1.25rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  background: linear-gradient(135deg, var(--card) 0%, #f7f9ff 100%);
+  box-shadow: 0 12px 30px rgba(24, 51, 104, 0.08);
+}
