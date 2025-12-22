@@ -1,31 +1,33 @@
 {
   "name": "flora-homesite",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev -p 3001",
-    "build": "next build",
-    "start": "next start -p 3001",
+    "dev": "vite --port 3001",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --port 3001",
     "lint": "eslint \"src/**/*.{ts,tsx}\" --max-warnings=0",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@ant-design/icons": "^5.6.1",
-    "antd": "^5.21.2",
-    "next": "^16.0.0",
-    "nodemailer": "^6.9.15",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "sass": "^1.79.4"
+    "antd": "^5.22.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router": "^7.0.1",
+    "sass": "^1.82.0"
   },
   "devDependencies": {
-    "@types/node": "^22.5.4",
-    "@types/nodemailer": "^6.4.15",
-    "@types/react": "^18.3.5",
-    "@types/react-dom": "^18.3.0",
-    "eslint": "^9.11.1",
-    "eslint-config-next": "^16.0.0",
-    "typescript": "~5.6.2"
+    "@types/node": "^22.10.1",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.16.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.3"
   },
   "engines": {
     "node": ">=18.18.0"

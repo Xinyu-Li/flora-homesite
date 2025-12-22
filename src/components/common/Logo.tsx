@@ -1,14 +1,10 @@
-'use client';
-
-import Link from "next/link";
-import Image from "next/image";
-import styles from "./Logo.module.scss";
-import floraLogo from "@/../public/logo1.png";
+import { Link } from 'react-router';
+import styles from './Logo.module.scss';
 
 export const Logo = () => {
   return (
-    <Link href="/" className={styles.logo} aria-label="Navigate to FLoRA home">
-      <Image src={floraLogo} alt="FLoRA logo" width={96} height={64} priority />
+    <Link to="/" className={styles.logo} aria-label="Navigate to FLoRA home">
+      <img src={`${import.meta.env.BASE_URL}images/logo1.png`} alt="FLoRA logo" width={96} height={64} />
       <span>FLoRA ENGINE</span>
     </Link>
   );

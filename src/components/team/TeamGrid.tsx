@@ -1,10 +1,6 @@
-'use client';
-
-import { Card, Typography, Button } from "antd";
-import Link from "next/link";
-import Image from "next/image";
-import { TeamMember } from "@/content/team";
-import styles from "./TeamGrid.module.scss";
+import { Card, Typography, Button } from 'antd';
+import { TeamMember } from '@/content/team';
+import styles from './TeamGrid.module.scss';
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -20,16 +16,16 @@ const TeamGrid = ({ members }: Props) => {
           key={member.name}
           className={styles.card}
           variant="borderless"
-          styles={{ body: { display: "flex", flexDirection: "column", gap: "0.5rem" } }}
         >
-          <Image
-            src={member.photo}
-            alt={`${member.name} portrait`}
-            width={120}
-            height={120}
-            className={styles.photo}
-            unoptimized
-          />
+          <a href={member.link} target="_blank" rel="noreferrer">
+            <img
+              src={member.photo}
+              alt={`${member.name} portrait`}
+              width={120}
+              height={120}
+              className={styles.photo}
+            />
+          </a>
           <div>
             <Title level={4} style={{ margin: 0 }}>
               {member.name}
@@ -38,12 +34,12 @@ const TeamGrid = ({ members }: Props) => {
               {member.title} - {member.affiliation}
             </Text>
           </div>
-          <Paragraph style={{ marginBottom: "0.5rem" }}>{member.bio}</Paragraph>
-          <Link href={member.link} target="_blank" rel="noreferrer">
+          <Paragraph style={{ marginBottom: '0.5rem' }}>{member.bio}</Paragraph>
+          <a href={member.link} target="_blank" rel="noreferrer">
             <Button type="link" size="small">
               View profile
             </Button>
-          </Link>
+          </a>
         </Card>
       ))}
     </div>

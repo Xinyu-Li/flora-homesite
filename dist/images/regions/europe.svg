@@ -1,0 +1,47 @@
+<svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="europeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="europeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dbeafe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#eff6ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#europeBg)" rx="12"/>
+
+  <!-- Main Europe landmass -->
+  <g transform="translate(60, 20)">
+    <!-- Scandinavia -->
+    <path d="M140,10 L150,5 L165,15 L170,35 L165,60 L155,75 L145,70 L140,50 L135,30 Z"
+          fill="url(#europeGrad)" opacity="0.9"/>
+
+    <!-- British Isles -->
+    <path d="M70,50 L85,45 L95,55 L90,75 L80,85 L65,80 L60,65 Z"
+          fill="url(#europeGrad)" opacity="0.9"/>
+    <ellipse cx="55" cy="70" rx="8" ry="12" fill="url(#europeGrad)" opacity="0.85"/>
+
+    <!-- Western Europe -->
+    <path d="M100,70 L130,65 L150,75 L145,95 L130,110 L115,115 L100,105 L90,90 L95,75 Z"
+          fill="url(#europeGrad)" opacity="0.9"/>
+
+    <!-- Iberian Peninsula -->
+    <path d="M70,110 L95,105 L110,115 L105,140 L85,150 L65,145 L60,125 Z"
+          fill="url(#europeGrad)" opacity="0.9"/>
+
+    <!-- Italy -->
+    <path d="M135,115 L145,110 L155,120 L160,145 L150,165 L140,160 L135,140 L130,125 Z"
+          fill="url(#europeGrad)" opacity="0.9"/>
+
+    <!-- Eastern Europe -->
+    <path d="M155,70 L200,60 L230,75 L240,100 L235,130 L210,150 L180,145 L160,130 L155,100 Z"
+          fill="url(#europeGrad)" opacity="0.9"/>
+
+    <!-- Greece -->
+    <path d="M185,150 L200,145 L210,155 L205,175 L190,180 L180,170 Z"
+          fill="url(#europeGrad)" opacity="0.9"/>
+  </g>
+
+  <text x="200" y="220" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e3a8a">EUROPE</text>
+</svg>

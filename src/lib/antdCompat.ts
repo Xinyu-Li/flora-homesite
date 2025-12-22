@@ -1,12 +1,10 @@
-'use client';
-
-import { createRoot } from "react-dom/client";
-import { unstableSetRender } from "antd/es/config-provider/UnstableContext";
+import { createRoot } from 'react-dom/client';
+import { unstableSetRender } from 'antd/es/config-provider/UnstableContext';
 
 let patched = false;
 
 export const ensureAntdCompat = () => {
-  if (patched || typeof window === "undefined") {
+  if (patched || typeof window === 'undefined') {
     return;
   }
 

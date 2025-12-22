@@ -1,0 +1,26 @@
+<svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="meGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="meBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dbeafe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#eff6ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#meBg)" rx="12"/>
+  <g transform="translate(90, 30)">
+    <!-- Turkey -->
+    <path d="M40,40 Q80,30 120,40 Q130,50 120,60 Q80,65 40,55 Q30,50 40,40 Z" fill="url(#meGrad)" opacity="0.9"/>
+    <!-- Iran -->
+    <path d="M150,50 Q190,45 210,70 Q200,100 170,105 Q140,95 150,50 Z" fill="url(#meGrad)" opacity="0.9"/>
+    <!-- Saudi Arabia -->
+    <path d="M80,80 Q130,70 160,90 Q170,130 140,160 Q100,170 70,150 Q60,110 80,80 Z" fill="url(#meGrad)" opacity="0.9"/>
+    <!-- Egypt -->
+    <path d="M30,80 Q50,70 65,85 Q70,120 55,150 Q35,145 25,115 Q20,95 30,80 Z" fill="url(#meGrad)" opacity="0.9"/>
+    <!-- UAE/Oman -->
+    <path d="M175,115 Q195,110 205,130 Q200,150 180,145 Q165,135 175,115 Z" fill="url(#meGrad)" opacity="0.9"/>
+  </g>
+  <text x="200" y="220" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e3a8a">MIDDLE EAST</text>
+</svg>

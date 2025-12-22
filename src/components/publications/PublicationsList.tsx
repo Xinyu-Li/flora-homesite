@@ -1,9 +1,6 @@
-'use client';
-
-import { Typography } from "antd";
-import Link from "next/link";
-import { PublicationCategory } from "@/content/publications";
-import styles from "./PublicationsList.module.scss";
+import { Typography } from 'antd';
+import { PublicationCategory } from '@/content/publications';
+import styles from './PublicationsList.module.scss';
 
 const { Title, Paragraph } = Typography;
 
@@ -19,14 +16,14 @@ const PublicationsList = ({ categories }: Props) => (
         <div className={styles.list}>
           {category.items.map((publication, index) => (
             <div key={`${publication.title}-${publication.year}`} className={styles.item}>
-              <Paragraph style={{ marginBottom: "0.35rem" }}>
-                <strong>{index + 1}. {publication.authors}</strong> ({publication.year}). {publication.title}.{" "}
+              <Paragraph style={{ marginBottom: '0.35rem' }}>
+                <strong>{index + 1}. {publication.authors}</strong> ({publication.year}). {publication.title}.{' '}
                 <em>{publication.venue}</em>
               </Paragraph>
               {(publication.doi || publication.url) && (
-                <Link href={publication.doi ?? publication.url!} target="_blank" rel="noreferrer">
+                <a href={publication.doi ?? publication.url!} target="_blank" rel="noreferrer">
                   {publication.doi ?? publication.url}
-                </Link>
+                </a>
               )}
             </div>
           ))}

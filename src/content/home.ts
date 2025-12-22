@@ -49,34 +49,39 @@ export const heroContent = {
 
 export const regionalSites: RegionalSite[] = [
   {
-    name: "Australia",
-    tagline: "Self-regulated learning partners across K-12 and Higher Education.",
-    actionLabel: "Visit Australian site",
-    url: "https://www.floraengine.org/moodle/",
-    image:
-      "https://img.freepik.com/premium-vector/stylized-simple-outline-map-australia-icon-blue-sketch-map-australia-vector-illustration_160901-3630.jpg?w=360",
-  },
-  {
-    name: "China",
-    tagline: "Sino-Australian collaborations piloting reflective writing and apprenticeship simulations.",
-    actionLabel: "Visit Chinese site",
-    url: "https://yidelearn.com/moodle/",
-    image:
-      "https://static.vecteezy.com/system/resources/previews/008/717/307/original/stylized-simple-outline-map-of-china-icon-blue-sketch-map-of-china-illustration-vector.jpg",
-  },
-  {
-    name: "Latin America",
-    tagline: "CELLA-LALA cohort codesigns bilingual SRL coaching experiences.",
-    actionLabel: "Visit Latin American site",
-    url: "https://cella-lala.floraengine.org/moodle/",
-    image: "https://i.pinimg.com/736x/3d/e0/57/3de057b9beab1778e598c6f2e6eaf6d0.jpg",
+    name: "Oceania",
+    tagline: "Self-regulated learning partners across K-12 and Higher Education in Australia and New Zealand.",
+    actionLabel: "Explore Oceania",
+    url: "https://www.floraengine.org/moodle",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Oceania_%28orthographic_projection%29.svg",
   },
   {
     name: "Europe",
-    tagline: "Collaborative research nodes across Germany and the Netherlands.",
-    actionLabel: "Explore EU deployment",
-    url: "https://www.edu.sot.tum.de/en/lldm/research-projects/flora/",
-    image: "https://img.freepik.com/premium-vector/europe-map-illustration_23-2147514644.jpg?w=360",
+    tagline: "Collaborative research nodes across Germany, Netherlands, and Nordic countries.",
+    actionLabel: "Explore Europe",
+    url: "https://nijmegen.floraproject.org/moodle",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/44/Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg",
+  },
+  {
+    name: "Middle East",
+    tagline: "Emerging partnerships advancing SRL research in Gulf and Levant regions.",
+    actionLabel: "Explore Middle East",
+    url: "https://ar.floraengine.org/moodle",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Middle_East_%28orthographic_projection%29.svg",
+  },
+  {
+    name: "Asia",
+    tagline: "Sino-Australian collaborations piloting reflective writing and apprenticeship simulations.",
+    actionLabel: "Explore Asia",
+    url: "https://asia.floraengine.org/moodle",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/80/Asia_%28orthographic_projection%29.svg",
+  },
+  {
+    name: "Americas",
+    tagline: "CELLA-LALA cohort codesigns bilingual SRL coaching experiences across North and South America.",
+    actionLabel: "Explore Americas",
+    url: "https://cella-lala.floraengine.org/moodle",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/ca/Americas_%28orthographic_projection%29.svg",
   },
 ];
 
@@ -116,17 +121,17 @@ export const focusAreas: FocusArea[] = [
 export const metrics: Metric[] = [
   {
     label: "Learners supported",
-    value: "4K+",
+    value: "50K+",
     detail: "Across reflective writing, STEM inquiry, and vocational coaching tasks.",
   },
   {
     label: "Research partners",
-    value: "12",
+    value: "50+",
     detail: "Universities and labs contributing instrumentation, analytics, and pedagogy.",
   },
   {
     label: "Publications",
-    value: "35+",
+    value: "100+",
     detail: "Peer-reviewed journal articles, LAK papers, and practitioner toolkits.",
   },
 ];

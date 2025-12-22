@@ -9,6 +9,33 @@ export type TeamMember = {
 
 export const coreTeam: TeamMember[] = [
   {
+    name: "Xinyu Li",
+    title: "Research Fellow & FLoRA Lead",
+    affiliation: "Monash University",
+    bio: "Leads FLoRA Engine research and development, focusing on AI-enhanced Self-Regulated Learning and Human-AI co-regulation.",
+    link: "https://scholar.google.com.au/citations?user=fY7vKpkAAAAJ&hl=en",
+    photo:
+      "https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=fY7vKpkAAAAJ&citpid=2",
+  },
+  {
+    name: "Tongguang Li",
+    title: "Research Fellow",
+    affiliation: "Monash University",
+    bio: "Researches self-regulated learning in technology-enhanced environments and develops adaptive scaffolds using generative AI.",
+    link: "https://scholar.google.com/citations?user=74eJJb4AAAAJ&hl=en",
+    photo:
+      "https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=74eJJb4AAAAJ&citpid=2",
+  },
+  {
+    name: "Linxuan Zhao",
+    title: "Research Fellow",
+    affiliation: "Monash University",
+    bio: "Investigates multimodal learning analytics, AI in education, and collaborative learning to improve educational outcomes.",
+    link: "https://scholar.google.com.au/citations?user=Wr7MGOcAAAAJ&hl=en",
+    photo:
+      "https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=Wr7MGOcAAAAJ&citpid=2",
+  },
+  {
     name: "Dragan Gasevic",
     title: "Distinguished Professor of Learning Analytics",
     affiliation: "Monash University",
@@ -31,7 +58,7 @@ export const coreTeam: TeamMember[] = [
     affiliation: "Radboud University Nijmegen",
     bio: "Directs the National Education Lab AI (NOLAI) and advances responsible instrumentation and adaptation for classrooms at scale.",
     link: "https://www.ru.nl/en/people/molenaar-i",
-    photo: "https://old.jacobsfoundation.org/app/uploads/2020/11/20201011_jf_Molenaar.jpg",
+    photo: "https://profilepage.ru.nl/profileservice/rest/1.0//profilephoto/600753?timestamp=1764581973&user=600753&hash=fd94d8561d3d2aff2283db31fb2c133c&secure=false",
   },
   {
     name: "Yizhou Fan",
@@ -57,15 +84,6 @@ export const coreTeam: TeamMember[] = [
     bio: "Builds writing analytics that surface discourse moves, metacognition, and SRL behaviors in real time.",
     link: "https://research.monash.edu/en/persons/mladen-rakovic",
     photo: "https://www.monash.edu/__data/assets/image/0019/2400472/mladen_rakovic.jpg",
-  },
-  {
-    name: "Xinyu Li",
-    title: "Research Fellow & Senior Software Developer",
-    affiliation: "Monash University",
-    bio: "Ships the production FLoRA platform, ensuring privacy-safe instrumentation and scalable AI services.",
-    link: "https://scholar.google.com.au/citations?user=fY7vKpkAAAAJ&hl=en",
-    photo:
-      "https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=fY7vKpkAAAAJ&citpid=2",
   },
   {
     name: "Lyn Lim",

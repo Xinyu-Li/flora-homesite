@@ -1,17 +1,107 @@
 .category {
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
+
+  h3 {
+    font-family: var(--font-heading), var(--font-sans), system-ui, sans-serif;
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    color: var(--foreground) !important;
+    margin-bottom: 1.5rem !important;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--border);
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gradient-start), var(--gradient-mid));
+    }
+  }
 }
 
 .list {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin: 1rem 0 0;
+  margin: 0;
 }
 
 .item {
-  padding: 1rem 1.25rem;
-  border-radius: 0.85rem;
-  background: var(--card-soft);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--card) 0%, var(--card-soft) 100%);
   border: 1px solid var(--border);
+  transition: all var(--transition-base);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--gradient-start), var(--gradient-mid));
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+  }
+
+  &:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-soft);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  p {
+    margin-bottom: 0.5rem !important;
+    line-height: 1.7;
+    color: var(--muted);
+
+    strong {
+      color: var(--foreground);
+      font-weight: 600;
+    }
+
+    em {
+      color: var(--muted-soft);
+      font-style: italic;
+    }
+  }
+
+  a {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 0.875rem;
+    font-weight: 500;
+    word-break: break-all;
+    transition: color var(--transition-fast);
+
+    &:hover {
+      color: var(--accent-dark);
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .category {
+    margin-bottom: 2rem;
+
+    h3 {
+      font-size: 1.25rem !important;
+    }
+  }
+
+  .item {
+    padding: 1.25rem;
+  }
 }

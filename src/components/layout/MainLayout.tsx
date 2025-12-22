@@ -1,15 +1,10 @@
-'use client';
-
-import { Layout, Menu, Button } from "antd";
-import type { MenuProps } from "antd";
-import Link from "next/link";
-import { useCallback, useMemo } from "react";
-import { usePathname, useRouter } from "next/navigation";
-import Logo from "@/components/common/Logo";
-import { ensureAntdCompat } from "@/lib/antdCompat";
-import styles from "./MainLayout.module.scss";
-
-ensureAntdCompat();
+import { Layout, Menu, Button } from 'antd';
+import type { MenuProps } from 'antd';
+import { GithubOutlined } from '@ant-design/icons';
+import { Link, useLocation } from 'react-router';
+import { useMemo } from 'react';
+import Logo from '@/components/common/Logo';
+import styles from './MainLayout.module.scss';
 
 const { Header, Content, Footer } = Layout;
 
@@ -20,36 +15,35 @@ type NavItem = {
 };
 
 const NAV_ITEMS: NavItem[] = [
-  { key: "home", label: "Home", href: "/" },
-  { key: "team", label: "Team", href: "/team" },
-  { key: "publications", label: "Publications", href: "/publications" },
-  { key: "news", label: "News", href: "/news" },
+  { key: 'home', label: 'Home', href: '/' },
+  { key: 'team', label: 'Team', href: '/team' },
+  { key: 'publications', label: 'Publications', href: '/publications' },
+  { key: 'news', label: 'News', href: '/news' },
 ];
 
 type Props = {
   children: React.ReactNode;
 };
 
-const toMenuItems = (items: NavItem[]): MenuProps["items"] =>
+const toMenuItems = (items: NavItem[]): MenuProps['items'] =>
   items.map((item) => ({
     key: item.key,
     label: (
-      <Link href={item.href} prefetch className={styles.menuLink}>
+      <Link to={item.href} className={styles.menuLink}>
         {item.label}
       </Link>
     ),
   }));
 
 const MainLayout = ({ children }: Props) => {
-  const pathname = usePathname();
-  const router = useRouter();
+  const location = useLocation();
 
   const selectedKey = useMemo(() => {
-    if (!pathname) return "home";
-    if (pathname === "/" || pathname === "/home") return "home";
-    const matched = NAV_ITEMS.find((item) => pathname.startsWith(item.href) && item.href !== "/");
-    return matched?.key ?? "home";
-  }, [pathname]);
+    const pathname = location.pathname;
+    if (!pathname || pathname === '/' || pathname === '/home') return 'home';
+    const matched = NAV_ITEMS.find((item) => pathname.startsWith(item.href) && item.href !== '/');
+    return matched?.key ?? 'home';
+  }, [location.pathname]);
 
   return (
     <Layout className={styles.shell}>
@@ -63,7 +57,15 @@ const MainLayout = ({ children }: Props) => {
             className={styles.menu}
             items={toMenuItems(NAV_ITEMS)}
           />
-          <Link href="/contact" prefetch>
+          <a
+            href="https://github.com/Xinyu-Li/FLoRA"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.githubLink}
+          >
+            <GithubOutlined />
+          </a>
+          <Link to="/contact">
             <Button type="primary" size="middle">
               Contact
             </Button>
